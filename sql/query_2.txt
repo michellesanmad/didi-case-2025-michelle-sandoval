@@ -1,0 +1,21 @@
+/*
+  Query 2 · Day with highest average number of restaurant visitors
+  ----------------------------------------------------------------
+  - Joins reservation data with date info to access day_of_week
+  - Aggregates average visitors per weekday
+  - Orders by descending average and returns only the top one
+  - Includes record count for context
+*/
+
+SELECT 
+    d.day_of_week,
+    AVG(r.reserve_visitors) AS avg_visitors,
+    COUNT(*) AS total_records
+FROM 
+    restaurants_visitors r
+JOIN 
+    date_info d ON r.visit_date = d.calendar_date
+GROUP BY 
+    d.day_of_week
+ORDER BY 
+    avg_visitors DESC;
