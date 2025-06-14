@@ -1,5 +1,8 @@
--- Q1: Top-5 restaurants by average visitors on holidays
--- Includes genre and area for business context
+-- Query 1: Top 5 restaurants by average number of visitors on holidays
+-- This query assumes clean and properly typed input data
+-- calendar_date is joined with visit_date to filter only holidays
+-- Filters holiday_flg = 1
+-- Adds genre_name and area_name for business context
 
 SELECT 
     r.id AS restaurant_id,
