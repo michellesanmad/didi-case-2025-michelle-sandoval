@@ -1,0 +1,50 @@
+-- Query 3: Weekly Growth in Restaurant Visitors
+-- Objective: Calculate week-over-week growth in total visitor volume,
+--            considering only full weeks with data from all 7 days.
+-- Strategy:
+--   - Aggregate daily visitors
+--   - Filter for complete weeks (7 unique days)
+--   - Compute total visitors per week
+--   - Calculate week-over-week growth using LAG()
+
+WITH daily_visitors AS (
+    SELECT 
+        visit_date,
+        DATE_TRUNC('week', visit_date)::DATE AS week_start,
+        SUM(reserve_visitors) AS visitors
+    FROM restaurants_visitors
+    GROUP BY visit_date
+),
+
+weekly_visitors AS (
+    SELECT 
+        week_start,
+        COUNT(*) AS day_count,
+        SUM(visitors) AS total_visitors
+    FROM daily_visitors
+    GROUP BY week_start
+    HAVING day_count = 7
+),
+
+growth_calculation AS (
+    SELECT
+        week_start,
+        total_visitors,
+        LAG(total_visitors) OVER (ORDER BY week_start) AS prev_week_visitors,
+        total_visitors - LAG(total_visitors) OVER (ORDER BY week_start) AS visitor_difference
+    FROM weekly_visitors
+)
+
+SELECT
+    week_start,
+    total_visitors,
+    prev_week_visitors,
+    ROUND(
+        (visitor_difference * 100.0) / NULLIF(prev_week_visitors, 0), 
+        2
+    ) AS growth_pct
+FROM growth_calculation
+ORDER BY week_start DESC
+LIMIT 4;
+
+
