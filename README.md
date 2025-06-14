@@ -12,8 +12,8 @@ This repository contains the solution to the take-home case study assigned as pa
 ## 📊 Progress
 
 - [x] Data loading and initial EDA
-- [ ] Business question answers
-- [ ] Visualizations
+- [x] Business question answers
+- [x] Visualizations
 - [ ] Final polish and documentation
 
 ## 🛠️ Environment
@@ -22,6 +22,14 @@ This project runs on:
 - Python 3.9
 - Pandas, Matplotlib, Jupyter
 - VS Code (recommended)
+
+## 📊 Key Visuals
+
+| Image | Insight |
+|-------|---------|
+| `training_history.png` | Model loss converges by epoch ~40 → no sign of over-fitting. |
+| `forecast_plot.png`    | Shows historical daily visitors (blue) and the 180-day LSTM forecast (orange). |
+
 
 ### 🔧 Setup instructions
 
