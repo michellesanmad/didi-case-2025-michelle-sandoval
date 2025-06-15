@@ -44,6 +44,7 @@ pip install -r requirements.txt
 
 ## 🤝 Author
 Michelle Sandoval Madrigal
+
 Data Analyst Intern Candidate @ DiDi
 
 ---
