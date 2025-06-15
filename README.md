@@ -12,6 +12,9 @@ This repository contains the solution to the take-home case study assigned as pa
 └── README.md # Project overview and usage
 ```
 
+## 📑 Final Slide Deck
+[Download the full PDF presentation](slides/DiDi_BI_Case.pdf)
+
 ## 📊 Progress
 
 - [x] Data loading and initial EDA
