@@ -3,18 +3,21 @@
 This repository contains the solution to the take-home case study assigned as part of the recruitment process for the Data Analyst Intern position at DiDi Chuxing Technology Co.
 
 ## 📁 Project Structure
+```text
 ├── data/ # Raw and processed datasets
-├── notebooks/ # Jupyter notebooks with analysis and solutions
-├── sql/ # SQL queries
-├── slides/ # Visuals or final presentation
+├── notebooks/ # notebooks EDA, SQL query validation, forecasting
+├── sql/ # .txt files with SQL queries
+├──figures/ # Output plots from forecasting model
+├── slides/ # Final presentation
 └── README.md # Project overview and usage
+```
 
 ## 📊 Progress
 
 - [x] Data loading and initial EDA
 - [x] Business question answers
 - [x] Visualizations
-- [ ] Final polish and documentation
+- [x] Final polish and documentation
 
 ## 🛠️ Environment
 
@@ -37,8 +40,9 @@ This project runs on:
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+```
 
-🤝 Author
+## 🤝 Author
 Michelle Sandoval Madrigal
 Data Analyst Intern Candidate @ DiDi
 
